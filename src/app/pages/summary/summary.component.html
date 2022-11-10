@@ -1,0 +1,11 @@
+<div class="container">
+  <div>Summary</div>
+<div>Datalar interpolasyon ile store dan buraya koyulacak.</div>
+
+<button class="btn btn-primary">Save</button>
+<button class="btn btn-primary" (click)="backButton()">Back</button>
+
+<div *ngIf="isIndividualCust && individualCustomer" >
+  <p class="text-muted mb-0">{{ individualCustomer.firstname }}</p>
+</div>
+</div>
