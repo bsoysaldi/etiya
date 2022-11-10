@@ -1,109 +1,60 @@
-<!-- <input [(ngModel)]="searchText" type="text" />
- services !== null -->
-<!-- <ul *ngIf="services">
-  <li *ngFor="let item of services | filterService: searchText">
-    {{ item.name }}
-  </li>
-</ul> -->
-
-<h5>Service List</h5>
-<form [formGroup]="serviceAddForm" (submit)="add()">
-  <div class="form-row">
-    <div class="col">
-      <input formControlName="name" type="text" placeholder="Enter name" />
-      <button class="btn btn-primary" type="submit">Add</button>
-    </div>
-    <div class="col">
-      <p>{{ error }}</p>
-      <br />
-    </div>
-  </div>
-</form>
-<h5>Form - Delete</h5>
-Silecek olan id: {{ serviceId }}
-<br />
-<input type="text" placeholder="id" [(ngModel)]="serviceId" />
-<button class="btn btn-primary" (click)="delete()">Delete</button>
-
-<table>
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Service Name</th>
-      <th scope="col">Edit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- <tr *ngFor="let item of services; let i = index">
-      <div class="d-flex align-items-center"></div>
-      <td>
-        <p type="text">{{ item.id }} {{ item.name }}</p>
-      </td>
-      <td>
-        <button class="btn btn-danger" (click)="foundedService(item.id)">
-          Update
-        </button>
-      </td>
-      <td>
-        <button
-          class="btn btn-danger"
-          placeholder="id"
-          [(ngModel)]="serviceIdToDelete"
-        >
-          Delete
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table> -->
-  </tbody>
-
-  <tbody>
-    <tr *ngFor="let item of services; let i = index">
-      <td>
-        <div class="d-flex align-items-center">
-          <div class="ms-1">
-            <td>
-              <p type="text">{{ item.id }}</p>
-            </td>
-          </div>
+<div class="container">
+<div class="col-md-auto">
+  <div class="d-flex align-items-center justify-content-center">
+    <form [formGroup]="serviceAddForm" (submit)="add()">
+      <div class="form-row">
+        <div class="col">
+          <input formControlName="name" type="text" placeholder="Enter name" />
+          <button class="btn btn-primary me-4" type="submit">Add</button>
         </div>
-      </td>
-      <td>
-        <p type="text">{{ item.name }}</p>
-      </td>
-      <td>
-        <button class="btn btn-danger" (click)="foundedService(item.id)">
-          Update
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- <div>
-  <ul *ngIf="services">
-    <ng-template ngFor let-item [ngForOf]="services">
-      <li *ngIf="item.name.length > 0">{{ item.id }} {{ item.name }}</li>
-      <button class="btn btn-danger" (click)="foundedService(item.id)">
-        Update/Delete
-      </button>
-    </ng-template>
-  </ul> -->
-
-<!-- <h2>{{ title }}</h2> -->
-
-<!-- <form [formGroup]="serviceAddForm" (submit)="add()">
-    <p>{{ error }}</p>
-    <input formControlName="name" type="text" placeholder="Enter name" />
-    <button class="btn btn-warning" type="submit">Add</button>
-  </form>
-
-  <h1>Form - Delete</h1>
-  Silecek olan id: {{ serviceIdToDelete }}
-  <div>
-    <input type="text" placeholder="id" [(ngModel)]="serviceIdToDelete" />
-    <button (click)="delete()">Delete</button>
+        <div class="col">
+          <p>{{ error }}</p>
+          <br />
+        </div>
+      </div>
+    </form>
+    <br />
+    <div class="form-row">
+      <div class="col">
+        <input type="text" placeholder="id" [(ngModel)]="serviceId" />
+        <button class="btn btn-primary" (click)="delete()">Delete</button>
+      </div>
+      <div class="col">
+        <p>{{ error }}</p>
+        <br />
+      </div>
+    </div>
   </div>
-</div> -->
-<!-- </div> -->
+
+  <div class="d-flex align-items-center justify-content-center">
+   
+  </div>
+</div>
+    <div class="row">
+      <div
+      *ngFor="let item of services; let i = index"
+        class="card"
+        style="width: 16rem ; margin-right: 5px;"
+      >
+      <div class="d-flex align-items-center">
+        <div class="ms-1">
+          <td>
+            <strong>ID: {{ item.id }}</strong>
+          </td>
+        </div>
+      </div>
+          <div class="card-body col-xs-12 col-sm-6 col-md-4">
+            <div>
+            <h5 class="card-title" style="width: 16rem">
+              
+              {{ item.name }}
+            </h5>
+          </div>
+          <button class="btn btn-danger" (click)="foundedService(item.id)">
+            Update
+          </button>
+        </div>
+      </div>
+        </div>
+</div>
+  
